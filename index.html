@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        font-family: "Hanken Grotesk", sans-serif;
+      }
+      @media (max-width: 450px) {
+        body {
+          margin: 0%;
+        }
+        .container {
+          display: block !important;
+          box-shadow: none !important;
+        }
+        .col-1,
+        .col-2 {
+          border-radius: 0 0 50px 20px !important;
+          width: 100% !important;
+          padding: 0% !important;
+        }
+        .mt {
+          margin-top: 20px !important;
+          font-size: medium !important;
+        }
+        .mb {
+          margin-bottom: 20px !important;
+        }
+        .mx {
+          margin-left: 20px;
+          margin-right: 35px;
+        }
+        .num {
+          height: 160px !important;
+        }
+        .para{
+          font-size: 20px !important;
+        }
+      }
+
+      @media (min-width: 1440px) {
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .container {
+        background-color: white;
+        display: flex;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+        border-radius: 20px;
+        max-width: 600px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .num {
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+        height: 200px;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        box-shadow: inset 1px 1px 12px 0px hsla(256, 72%, 46%, 1);
+        border-color: rgb(97, 42, 249);
+        background: linear-gradient(
+          hsla(256, 72%, 46%, 1),
+          hsla(241, 72%, 46%, 0)
+        );
+      }
+      .col-1 {
+        background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+        border-radius: 20px;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 250px;
+      }
+
+      .col-2 {
+        background-color: white;
+        width: 300px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+      }
+      .result {
+        color: hsl(241, 100%, 89%);
+        font-weight: 400;
+        font-size: 30px;
+      }
+
+      h2 {
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-align: center;
+        color: white;
+      }
+      .seven {
+        font-size: 50px;
+        color: white;
+        font-weight: bold;
+      }
+      .hundred {
+        color: hsl(241, 100%, 89%);
+        font-size: 20px;
+        opacity: 0.6;
+      }
+      .summary {
+        color: hsl(224, 30%, 27%);
+        font-size: 30px;
+        text-align: left;
+      }
+      .Reaction {
+        display: flex;
+        justify-content: space-between;
+        background-color: hsl(0, 35%, 92%);
+        color: hsl(0, 100%, 67%);
+        border-radius: 10px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      .memory {
+        display: flex;
+        justify-content: space-between;
+        background-color: hsl(50, 88%, 91%);
+        color: hsl(39, 100%, 56%);
+        border-radius: 10px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      .verbal {
+        display: flex;
+        justify-content: space-between;
+        background-color: hsl(167, 43%, 90%);
+        color: hsl(166, 100%, 37%);
+        border-radius: 10px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      .Visual {
+        display: flex;
+        justify-content: space-between;
+        background-color: hsl(233, 41%, 87%);
+        color: hsl(234, 85%, 45%);
+        border-radius: 10px;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      .Continue {
+        background-color: hsl(224, 30%, 27%);
+        color: white;
+        border-radius: 30px;
+        text-align: center;
+        padding: 20px 80px;
+        font-weight: 700;
+        margin-top: 1.6rem;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      .Continue:hover {
+        background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      }
+      .black {
+        color: black;
+        font-weight: bold;
+      }
+      .grey {
+        color: gray;
+      }
+      .para {
+        color: hsl(241, 100%, 89%) ;
+        font-size: 15px;
+        display: flex;
+        text-align: center;
+      }
+
+      .flex {
+        display: flex;
+      }
+      .word {
+        margin: 0%;
+        padding: 10px;
+      }
+      .number {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-1 mb">
+        <div class="result mt"><h2 class="result mt">Your Result</h2></div>
+        <div class="num">
+          <span class="seven">76</span>
+          <span class="hundred">of 100</span>
+        </div>
+        <div class="great">
+          <h2 class="h2 mt">Great</h2>
+          <p class="para mb mx">
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </div>
+      </div>
+      <div class="col-2">
+        <h2 class="summary mx">Summary</h2>
+
+        <div class="Reaction mx">
+          <div class="flex">
+            <img
+              src="./assets/images/icon-reaction.svg"
+              alt="icon-reaction"
+              class="images"
+            />
+            <span class="Reaction word">Reaction</span>
+          </div>
+          <div class="number">
+            <span class="black"> 80 /</span> <span class="grey">100</span>
+          </div>
+        </div>
+        <div class="memory mx">
+          <div class="flex">
+            <img
+              src="./assets/images/icon-memory.svg"
+              alt="icon-memor"
+              class="images"
+            />
+            <span class="Memory word">Memory</span>
+          </div>
+          <div class="number">
+            <span class="black"> 92 / </span> <span class="grey">100</span>
+          </div>
+        </div>
+        <div class="verbal mx">
+          <div class="flex">
+            <img
+              src="./assets/images/icon-verbal.svg"
+              alt="icon-verbal"
+              class="images"
+            />
+            <span class="Verbal word">Verbal</span>
+          </div>
+          <div class="number">
+            <span class="black"> 61 /</span> <span class="grey">100</span>
+          </div>
+        </div>
+        <div class="Visual mx">
+          <div class="flex">
+            <img
+              src="./assets/images/icon-visual.svg"
+              alt="icon-visual"
+              class="images"
+            />
+            <span class="Visual word">Visual</span>
+          </div>
+          <div class="number">
+            <span class="black"> 72 /</span> <span class="grey">100</span>
+          </div>
+        </div>
+        <button class="Continue mx mb">Continue</button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+</html>
